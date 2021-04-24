@@ -12,6 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -41,6 +42,24 @@ public class ImageController {
   public ResponseEntity<List<Image>> queryImages(Image image) throws Exception {
 
     return new ResponseEntity<>(imageService.queryImages(image), HttpStatus.OK);
+
+  }
+
+  /**
+   * Gets image by id.
+   *
+   * @param id the id from the path variable
+   * @return the image with said id
+   */
+  @GetMapping(value = "/{id}")
+  @ApiOperation("Finds an image by it's Id")
+  @ApiResponses(value = {
+      @ApiResponse(code = 200, message = "OK", response = Image.class),
+      @ApiResponse(code = 404, message = "NOT FOUND")
+  })
+  public ResponseEntity<Image> getProductById(@PathVariable Long id) throws Exception {
+
+    return new ResponseEntity<>(imageService.getImageById(id), HttpStatus.OK);
 
   }
 

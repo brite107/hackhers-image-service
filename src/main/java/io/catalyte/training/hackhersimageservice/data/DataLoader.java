@@ -34,8 +34,8 @@ public class DataLoader implements CommandLineRunner {
   private void loadImages() {
 
     image1 = imageRepository.save(new Image("Shoe", "Basketball", "Men", "src/main/resources/image/MenBasketballShoe.jpg"));
-    image2 = imageRepository.save(new Image("Shoe", "Basketball", "Men", "src/main/resources/image/MenBasketballShoe.jpg"));
-    image3 = imageRepository.save(new Image("Shoe", "Basketball", "Men", "src/main/resources/image/MenBasketballShoe.jpg"));
+    image2 = imageRepository.save(new Image("Shoe", "Basketball", "Women", "src/main/resources/image/MenBasketballShoe.jpg"));
+    image3 = imageRepository.save(new Image("Shoe", "Basketball", "Kids", "src/main/resources/image/MenBasketballShoe.jpg"));
     image4 = imageRepository.save(new Image("Shoe", "Basketball", "Men", "src/main/resources/image/MenBasketballShoe.jpg"));
     image5 = imageRepository.save(new Image("Shoe", "Basketball", "Men", "src/main/resources/image/MenBasketballShoe.jpg"));
 

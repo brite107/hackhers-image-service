@@ -24,7 +24,7 @@ public class StringConstants {
   public static final String BAD_REQUEST_STATE = "The customer's state must be one of the 50 US states that exist";
   public static final String BAD_REQUEST_ZIPCODE = "The zip code must have the format XXXXX or XXXXX-XXXX";
   public static final String BAD_REQUEST_MINIMUM = "The quantity must have a value greater than or equal to 0";
-  public static final String BAD_REQUEST_CUSTOMER_NOT_FOUND = "The customer does not exist in the database";
+  public static final String BAD_REQUEST_IMAGE_NOT_FOUND = "The image does not exist in the database";
   public static final String BAD_REQUEST_PRODUCT_NOT_FOUND = "The product does not exist in the database";
   public static final String BAD_REQUEST_ORDER_NOT_FOUND = "The order does not exist in the database";
   public static final String BAD_REQUEST_USER_NOT_FOUND = "The user does not exist in the database";

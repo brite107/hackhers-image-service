@@ -6,4 +6,6 @@ import java.util.List;
 public interface ImageService {
 
   List<Image> queryImages(Image image) throws Exception;
+
+  Image getImageById(Long id) throws Exception;
 }

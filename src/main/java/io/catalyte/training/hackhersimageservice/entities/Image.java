@@ -1,5 +1,6 @@
 package io.catalyte.training.hackhersimageservice.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import java.sql.Blob;
 import java.util.Objects;
 import javax.persistence.Entity;
@@ -102,6 +103,7 @@ public class Image {
     return Objects.hash(id, type, category, demographic, imageFileName);
   }
 
+  @JsonIgnore
   public boolean isEmpty() {
     return Objects.isNull(id) &&
         Objects.isNull(type) &&
