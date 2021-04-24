@@ -33,6 +33,8 @@ public class ImageServiceImpl implements ImageService {
         return imageRepository.findAll();
       } else {
         Example<Image> imageExample = Example.of(image);
+        //TODO: return the actual images
+//        List<Image> imageObjects = imageRepository.findAll(imageExample);
         return imageRepository.findAll(imageExample);
       }
     } catch (Exception e) {

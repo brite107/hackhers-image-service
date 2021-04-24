@@ -7,10 +7,14 @@ import io.catalyte.training.hackhersimageservice.services.ImageService;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;
 import io.swagger.annotations.ApiResponses;
+import java.io.IOException;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.io.ClassPathResource;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.util.StreamUtils;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -57,10 +61,23 @@ public class ImageController {
       @ApiResponse(code = 200, message = "OK", response = Image.class),
       @ApiResponse(code = 404, message = "NOT FOUND")
   })
-  public ResponseEntity<Image> getProductById(@PathVariable Long id) throws Exception {
+  public ResponseEntity<Image> getImageById(@PathVariable Long id) throws Exception {
 
     return new ResponseEntity<>(imageService.getImageById(id), HttpStatus.OK);
 
+  }
+
+  @GetMapping(value = "/MenBasketballShoe",
+      produces = MediaType.IMAGE_JPEG_VALUE)
+  public ResponseEntity<byte[]> getImage() throws IOException {
+
+    var imgFile = new ClassPathResource("image/MenBasketballShoe.jpg");
+    byte[] bytes = StreamUtils.copyToByteArray(imgFile.getInputStream());
+
+    return ResponseEntity
+        .ok()
+        .contentType(MediaType.IMAGE_JPEG)
+        .body(bytes);
   }
 
 }
