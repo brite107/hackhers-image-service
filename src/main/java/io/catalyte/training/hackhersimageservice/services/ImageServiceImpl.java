@@ -9,7 +9,7 @@ import org.springframework.data.domain.Example;
 import org.springframework.stereotype.Service;
 
 /**
- * service class which implements CustomerService interface
+ * service class which implements ImageService interface
  */
 @Service
 public class ImageServiceImpl implements ImageService {
@@ -17,6 +17,12 @@ public class ImageServiceImpl implements ImageService {
   @Autowired
   ImageRepository imageRepository;
 
+  /**
+   * Gets images from the database
+   *
+   * @param image an optional sample to query against
+   * @return a list of matching customers
+   */
   @Override
   public List<Image> queryImages(Image image) throws Exception {
     try {

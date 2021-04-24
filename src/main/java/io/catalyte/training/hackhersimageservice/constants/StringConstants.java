@@ -40,7 +40,7 @@ public class StringConstants {
 
 
   //endpoint constants
-  public static final String CONTEXT_USERS = "/users";
+  public static final String CONTEXT_IMAGES = "/images";
   public static final String CONTEXT_PRODUCTS = "/products";
   public static final String CONTEXT_CUSTOMERS = "/customers";
   public static final String CONTEXT_ORDERS = "/orders";

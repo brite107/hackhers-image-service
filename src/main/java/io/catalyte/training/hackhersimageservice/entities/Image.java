@@ -9,7 +9,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 /**
- * image
+ * image entity and all of its field
  */
 @Entity
 @Table(name = "image")
@@ -30,6 +30,57 @@ public class Image {
   private String demographic;
 
   private String imageFileName;
+
+  public Image() {
+  }
+
+  public Image(String type, String category, String demographic,
+      String imageFileName) {
+    this.type = type;
+    this.category = category;
+    this.demographic = demographic;
+    this.imageFileName = imageFileName;
+  }
+
+  public Long getId() {
+    return id;
+  }
+
+  public void setId(Long id) {
+    this.id = id;
+  }
+
+  public String getType() {
+    return type;
+  }
+
+  public void setType(String type) {
+    this.type = type;
+  }
+
+  public String getCategory() {
+    return category;
+  }
+
+  public void setCategory(String category) {
+    this.category = category;
+  }
+
+  public String getDemographic() {
+    return demographic;
+  }
+
+  public void setDemographic(String demographic) {
+    this.demographic = demographic;
+  }
+
+  public String getImageFileName() {
+    return imageFileName;
+  }
+
+  public void setImageFileName(String imageFileName) {
+    this.imageFileName = imageFileName;
+  }
 
   @Override
   public boolean equals(Object o) {
