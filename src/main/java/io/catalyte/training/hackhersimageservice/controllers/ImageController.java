@@ -61,9 +61,17 @@ public class ImageController {
       @ApiResponse(code = 200, message = "OK", response = Image.class),
       @ApiResponse(code = 404, message = "NOT FOUND")
   })
-  public ResponseEntity<Image> getImageById(@PathVariable Long id) throws Exception {
+  public ResponseEntity<byte[]> getImageById(@PathVariable Long id) throws Exception {
 
-    return new ResponseEntity<>(imageService.getImageById(id), HttpStatus.OK);
+    var imgFile = new ClassPathResource("image/default-image.jpg");
+    byte[] bytes = StreamUtils.copyToByteArray(imgFile.getInputStream());
+
+    return ResponseEntity
+        .ok()
+        .contentType(MediaType.IMAGE_JPEG)
+        .body(bytes);
+
+//    return new ResponseEntity<>(imageService.getImageById(id), HttpStatus.OK);
 
   }
 
