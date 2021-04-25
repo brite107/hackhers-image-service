@@ -63,15 +63,10 @@ public class ImageController {
   })
   public ResponseEntity<byte[]> getImageById(@PathVariable Long id) throws Exception {
 
-    var imgFile = new ClassPathResource("image/default-image.jpg");
-    byte[] bytes = StreamUtils.copyToByteArray(imgFile.getInputStream());
-
     return ResponseEntity
         .ok()
         .contentType(MediaType.IMAGE_JPEG)
-        .body(bytes);
-
-//    return new ResponseEntity<>(imageService.getImageById(id), HttpStatus.OK);
+        .body(imageService.getImageById(id));
 
   }
 

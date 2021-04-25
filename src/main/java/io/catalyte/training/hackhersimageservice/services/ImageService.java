@@ -7,5 +7,5 @@ public interface ImageService {
 
   List<Image> queryImages(Image image) throws Exception;
 
-  Image getImageById(Long id) throws Exception;
+  byte[] getImageById(Long id) throws Exception;
 }

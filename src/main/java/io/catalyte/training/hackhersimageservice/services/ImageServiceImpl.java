@@ -8,8 +8,12 @@ import io.catalyte.training.hackhersimageservice.exceptions.ServiceUnavailable;
 import io.catalyte.training.hackhersimageservice.repositories.ImageRepository;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.io.ClassPathResource;
 import org.springframework.data.domain.Example;
+import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
+import org.springframework.util.StreamUtils;
 
 /**
  * service class which implements ImageService interface
@@ -46,14 +50,18 @@ public class ImageServiceImpl implements ImageService {
    * Gets a image by the image's id
    *
    * @param id the image's id
-   * @return image with said id
+   * @return byte array of image with said id
    */
-  public Image getImageById(Long id) {
+  public byte[] getImageById(Long id) {
 
     try {
       Image image = imageRepository.findById(id).orElse(null);
-      if (image != null) {
-        return image;
+      var imgFile = new ClassPathResource(image.getImageFileName());
+//      var imgFile = new ClassPathResource("image/default-image.jpg");
+      byte[] bytes = StreamUtils.copyToByteArray(imgFile.getInputStream());
+
+      if (bytes != null) {
+        return bytes;
       }
     } catch (Exception e) {
       throw new ServiceUnavailable(e);
