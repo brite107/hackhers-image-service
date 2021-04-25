@@ -22,6 +22,8 @@ public class Image {
 //  @ApiModelProperty(notes = GENERATED_ID)
   private Long id;
 
+  private String productId;
+
 //  @NotBlank(message = "type" + REQUIRED_FIELD)
 //  @ApiModelProperty(notes = "the image type")
   private String type;
@@ -35,9 +37,10 @@ public class Image {
   public Image() {
   }
 
-  public Image(String type, String category, String demographic,
+  public Image(String productId, String type, String category, String demographic,
       String imageFileName) {
     this.type = type;
+    this.productId = productId;
     this.category = category;
     this.demographic = demographic;
     this.imageFileName = imageFileName;
@@ -57,6 +60,14 @@ public class Image {
 
   public void setType(String type) {
     this.type = type;
+  }
+
+  public String getProductId() {
+    return productId;
+  }
+
+  public void setProductId(String productId) {
+    this.productId = productId;
   }
 
   public String getCategory() {
@@ -93,20 +104,21 @@ public class Image {
     }
     Image image = (Image) o;
     return Objects.equals(id, image.id) && Objects.equals(type, image.type)
-        && Objects.equals(category, image.category) && Objects
-        .equals(demographic, image.demographic) && Objects
-        .equals(imageFileName, image.imageFileName);
+        && Objects.equals(productId, image.productId) && Objects
+        .equals(category, image.category) && Objects.equals(demographic, image.demographic)
+        && Objects.equals(imageFileName, image.imageFileName);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, type, category, demographic, imageFileName);
+    return Objects.hash(id, type, productId, category, demographic, imageFileName);
   }
 
   @JsonIgnore
   public boolean isEmpty() {
     return Objects.isNull(id) &&
         Objects.isNull(type) &&
+        Objects.isNull(productId) &&
         Objects.isNull(category) &&
         Objects.isNull(demographic) &&
         Objects.isNull(imageFileName);
