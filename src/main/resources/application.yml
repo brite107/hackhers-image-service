@@ -10,3 +10,5 @@ spring:
     username: postgres
     password: root
     driverClassName: org.postgresql.Driver
+server:
+  port: 8081
