@@ -43,9 +43,13 @@ public class ImageController {
   @ApiResponses(value = {
       @ApiResponse(code = 200, message = "OK", response = Image.class)
   })
-  public ResponseEntity<List<Image>> queryImages(Image image) throws Exception {
+  public ResponseEntity<List<byte[]>> queryImages(Image image) throws Exception {
 
-    return new ResponseEntity<>(imageService.queryImages(image), HttpStatus.OK);
+//    return new ResponseEntity<>(imageService.queryImages(image), HttpStatus.OK);
+    return ResponseEntity
+        .ok()
+        .contentType(MediaType.IMAGE_JPEG)
+        .body(imageService.queryImages(image));
 
   }
 

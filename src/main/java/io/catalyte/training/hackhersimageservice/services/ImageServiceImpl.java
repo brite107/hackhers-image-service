@@ -31,19 +31,25 @@ public class ImageServiceImpl implements ImageService {
    * @return a list of matching images
    */
   @Override
-  public List<Image> queryImages(Image image) throws Exception {
-    try {
-      if (image.isEmpty()) {
-        return imageRepository.findAll();
-      } else {
-        Example<Image> imageExample = Example.of(image);
-        //TODO: return the actual images
-//        List<Image> imageObjects = imageRepository.findAll(imageExample);
-        return imageRepository.findAll(imageExample);
-      }
-    } catch (Exception e) {
-      throw new ServiceUnavailable(e);
-    }
+  public List<byte[]> queryImages(Image image) throws Exception {
+//    List<Image> imageObjects;
+//    try {
+//      if (image.isEmpty()) {
+//        imageObjects = imageRepository.findAll();
+//      } else {
+//        Example<Image> imageExample = Example.of(image);
+//        imageObjects = imageRepository.findAll(imageExample);
+//      }
+//      byte[] images;
+//      imageObjects.forEach(imageObject -> {
+//        var imgFile = new ClassPathResource(imageObject.getImageFileName());
+//        byte[] bytes = StreamUtils.copyToByteArray(imgFile.getInputStream());
+//      });
+//    } catch (Exception e) {
+//      throw new ServiceUnavailable(e);
+//    }
+
+    return null;
   }
 
   /**

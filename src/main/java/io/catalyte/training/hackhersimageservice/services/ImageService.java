@@ -5,7 +5,7 @@ import java.util.List;
 
 public interface ImageService {
 
-  List<Image> queryImages(Image image) throws Exception;
+  List<byte[]> queryImages(Image image) throws Exception;
 
   byte[] getImageById(Long id) throws Exception;
 }
