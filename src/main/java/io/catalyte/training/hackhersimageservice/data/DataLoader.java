@@ -33,11 +33,9 @@ public class DataLoader implements CommandLineRunner {
 
   private void loadImages() {
 
-    image1 = imageRepository.save(new Image("", "", "", "", "image/default-image.jpg"));
-    image2 = imageRepository.save(new Image("", "Shoe", "Basketball", "Women", "image/MenBasketballShoe.jpg"));
-    image3 = imageRepository.save(new Image("", "Shoe", "Basketball", "Kids", "image/MenBasketballShoe.jpg"));
-    image4 = imageRepository.save(new Image("", "Shoe", "Basketball", "Men", "image/MenBasketballShoe.jpg"));
-    image5 = imageRepository.save(new Image("", "Shoe", "Basketball", "Men", "image/MenBasketballShoe.jpg"));
+    image1 = imageRepository.save(new Image("", "", "", "", "https://www.tibs.org.tw/images/default.jpg"));
+    image2 = imageRepository.save(new Image("", "Shoe", "Soccer", "Women", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSunetQnLHq-4zWbi-GY8Sc2H0H79zQkoOa6YQtmGMhPmcuJVZhp2UvPsByqcMXuslewZI&usqp=CAU"));
+    image3 = imageRepository.save(new Image("", "Sock", "", "Kids", "https://solidus-data-migrate.s3.amazonaws.com/spree/products/36317/large/KidsBestFriend-YouthCrewSocks-YC0045-JC0045-MODEL-FRONT.jpg?1598908106"));
 
   }
 }
