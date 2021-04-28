@@ -1,7 +1,10 @@
 package io.catalyte.training.hackhersimageservice.entities;
 
+import static io.catalyte.training.hackhersimageservice.constants.StringConstants.GENERATED_ID;
+
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import java.sql.Blob;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 import java.util.Objects;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -14,36 +17,39 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name = "image")
-//@ApiModel(description = "All details about the image")
+@ApiModel(description = "All details about the image")
 public class Image {
 
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
-//  @ApiModelProperty(notes = GENERATED_ID)
+  @ApiModelProperty(notes = GENERATED_ID)
   private Long id;
 
+  @ApiModelProperty(notes = "the id of the associated product")
   private String productId;
 
-//  @NotBlank(message = "type" + REQUIRED_FIELD)
-//  @ApiModelProperty(notes = "the image type")
+  @ApiModelProperty(notes = "the image type")
   private String type;
 
+  @ApiModelProperty(notes = "the product category")
   private String category;
 
+  @ApiModelProperty(notes = "the product demographic")
   private String demographic;
 
-  private String imageFileName;
+  @ApiModelProperty(notes = "the image URL")
+  private String imageUrl;
 
   public Image() {
   }
 
   public Image(String productId, String type, String category, String demographic,
-      String imageFileName) {
+      String imageUrl) {
     this.type = type;
     this.productId = productId;
     this.category = category;
     this.demographic = demographic;
-    this.imageFileName = imageFileName;
+    this.imageUrl = imageUrl;
   }
 
   public Long getId() {
@@ -86,12 +92,12 @@ public class Image {
     this.demographic = demographic;
   }
 
-  public String getImageFileName() {
-    return imageFileName;
+  public String getImageUrl() {
+    return imageUrl;
   }
 
-  public void setImageFileName(String imageFileName) {
-    this.imageFileName = imageFileName;
+  public void setImageUrl(String imageFileName) {
+    this.imageUrl = imageFileName;
   }
 
   @Override
@@ -106,12 +112,12 @@ public class Image {
     return Objects.equals(id, image.id) && Objects.equals(type, image.type)
         && Objects.equals(productId, image.productId) && Objects
         .equals(category, image.category) && Objects.equals(demographic, image.demographic)
-        && Objects.equals(imageFileName, image.imageFileName);
+        && Objects.equals(imageUrl, image.imageUrl);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, type, productId, category, demographic, imageFileName);
+    return Objects.hash(id, type, productId, category, demographic, imageUrl);
   }
 
   @JsonIgnore
@@ -121,6 +127,6 @@ public class Image {
         Objects.isNull(productId) &&
         Objects.isNull(category) &&
         Objects.isNull(demographic) &&
-        Objects.isNull(imageFileName);
+        Objects.isNull(imageUrl);
   }
 }
