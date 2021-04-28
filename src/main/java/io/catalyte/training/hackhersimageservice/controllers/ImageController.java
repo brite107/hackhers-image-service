@@ -43,14 +43,14 @@ public class ImageController {
   @ApiResponses(value = {
       @ApiResponse(code = 200, message = "OK", response = Image.class)
   })
-  public ResponseEntity<List<byte[]>> queryImages(Image image) throws Exception {
+  public ResponseEntity<List<String>> queryImages(Image image) throws Exception {
 
 //    return new ResponseEntity<>(imageService.queryImages(image), HttpStatus.OK);
-    return ResponseEntity
-        .ok()
-        .contentType(MediaType.IMAGE_JPEG)
-        .body(imageService.queryImages(image));
-
+//    return ResponseEntity
+//        .ok()
+//        .contentType(MediaType.IMAGE_JPEG)
+//        .body(imageService.queryImages(image));
+    return null;
   }
 
   /**
@@ -65,12 +65,12 @@ public class ImageController {
       @ApiResponse(code = 200, message = "OK", response = Image.class),
       @ApiResponse(code = 404, message = "NOT FOUND")
   })
-  public ResponseEntity<byte[]> getImageById(@PathVariable Long id) throws Exception {
-
-    return ResponseEntity
-        .ok()
-        .contentType(MediaType.IMAGE_JPEG)
-        .body(imageService.getImageById(id));
+  public ResponseEntity<String> getImageById(@PathVariable Long id) throws Exception {
+    return new ResponseEntity<String>(imageService.getImageById(id).getImageUrl(), HttpStatus.OK);
+//    return ResponseEntity
+//        .ok()
+//        .contentType(MediaType.IMAGE_JPEG)
+//        .body(imageService.getImageById(id));
 
   }
 

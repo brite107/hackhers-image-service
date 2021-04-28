@@ -6,14 +6,11 @@ import io.catalyte.training.hackhersimageservice.entities.Image;
 import io.catalyte.training.hackhersimageservice.exceptions.ResourceNotFound;
 import io.catalyte.training.hackhersimageservice.exceptions.ServiceUnavailable;
 import io.catalyte.training.hackhersimageservice.repositories.ImageRepository;
+import io.catalyte.training.hackhersimageservice.entities.Image;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.ClassPathResource;
-import org.springframework.data.domain.Example;
-import org.springframework.http.MediaType;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
-import org.springframework.util.StreamUtils;
 
 /**
  * service class which implements ImageService interface
@@ -31,7 +28,7 @@ public class ImageServiceImpl implements ImageService {
    * @return a list of matching images
    */
   @Override
-  public List<byte[]> queryImages(Image image) throws Exception {
+  public List<Image> queryImages(Image image) throws Exception {
 //    List<Image> imageObjects;
 //    try {
 //      if (image.isEmpty()) {
@@ -58,16 +55,12 @@ public class ImageServiceImpl implements ImageService {
    * @param id the image's id
    * @return byte array of image with said id
    */
-  public byte[] getImageById(Long id) {
+  public Image getImageById(Long id) {
 
     try {
       Image image = imageRepository.findById(id).orElse(null);
-      var imgFile = new ClassPathResource(image.getImageFileName());
-//      var imgFile = new ClassPathResource("image/default-image.jpg");
-      byte[] bytes = StreamUtils.copyToByteArray(imgFile.getInputStream());
-
-      if (bytes != null) {
-        return bytes;
+      if (image != null) {
+        return image;
       }
     } catch (Exception e) {
       throw new ServiceUnavailable(e);
