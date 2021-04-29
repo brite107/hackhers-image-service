@@ -43,14 +43,9 @@ public class ImageController {
   @ApiResponses(value = {
       @ApiResponse(code = 200, message = "OK", response = Image.class)
   })
-  public ResponseEntity<List<String>> queryImages(Image image) throws Exception {
+  public ResponseEntity<List<Image>> queryImages(Image image) throws Exception {
 
-//    return new ResponseEntity<>(imageService.queryImages(image), HttpStatus.OK);
-//    return ResponseEntity
-//        .ok()
-//        .contentType(MediaType.IMAGE_JPEG)
-//        .body(imageService.queryImages(image));
-    return null;
+    return new ResponseEntity<>(imageService.queryImages(image), HttpStatus.OK);
   }
 
   /**
@@ -60,17 +55,13 @@ public class ImageController {
    * @return the image with said id
    */
   @GetMapping(value = "/{id}")
-  @ApiOperation("Finds an image by it's Id")
+  @ApiOperation("Finds an image by its Id")
   @ApiResponses(value = {
-      @ApiResponse(code = 200, message = "OK", response = Image.class),
+      @ApiResponse(code = 200, message = "OK", response = String.class),
       @ApiResponse(code = 404, message = "NOT FOUND")
   })
-  public ResponseEntity<String> getImageById(@PathVariable Long id) throws Exception {
-    return new ResponseEntity<String>(imageService.getImageById(id).getImageUrl(), HttpStatus.OK);
-//    return ResponseEntity
-//        .ok()
-//        .contentType(MediaType.IMAGE_JPEG)
-//        .body(imageService.getImageById(id));
+  public ResponseEntity<Image> getImageById(@PathVariable Long id) throws Exception {
+    return new ResponseEntity<>(imageService.getImageById(id), HttpStatus.OK);
 
   }
 

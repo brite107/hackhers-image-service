@@ -6,10 +6,9 @@ import io.catalyte.training.hackhersimageservice.entities.Image;
 import io.catalyte.training.hackhersimageservice.exceptions.ResourceNotFound;
 import io.catalyte.training.hackhersimageservice.exceptions.ServiceUnavailable;
 import io.catalyte.training.hackhersimageservice.repositories.ImageRepository;
-import io.catalyte.training.hackhersimageservice.entities.Image;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.core.io.ClassPathResource;
+import org.springframework.data.domain.Example;
 import org.springframework.stereotype.Service;
 
 /**
@@ -29,24 +28,18 @@ public class ImageServiceImpl implements ImageService {
    */
   @Override
   public List<Image> queryImages(Image image) throws Exception {
-//    List<Image> imageObjects;
-//    try {
-//      if (image.isEmpty()) {
-//        imageObjects = imageRepository.findAll();
-//      } else {
-//        Example<Image> imageExample = Example.of(image);
-//        imageObjects = imageRepository.findAll(imageExample);
-//      }
-//      byte[] images;
-//      imageObjects.forEach(imageObject -> {
-//        var imgFile = new ClassPathResource(imageObject.getImageFileName());
-//        byte[] bytes = StreamUtils.copyToByteArray(imgFile.getInputStream());
-//      });
-//    } catch (Exception e) {
-//      throw new ServiceUnavailable(e);
-//    }
 
-    return null;
+    try {
+      if (image.isEmpty()) {
+        return imageRepository.findAll();
+      } else {
+        Example<Image> imageExample = Example.of(image);
+        return imageRepository.findAll(imageExample);
+      }
+    } catch (Exception e) {
+      throw new ServiceUnavailable(e);
+    }
+
   }
 
   /**
