@@ -31,10 +31,10 @@ public class Image {
   @ApiModelProperty(notes = "the image type")
   private String type;
 
-  @ApiModelProperty(notes = "the product category")
+  @ApiModelProperty(notes = "the image category")
   private String category;
 
-  @ApiModelProperty(notes = "the product demographic")
+  @ApiModelProperty(notes = "the image demographic")
   private String demographic;
 
   @ApiModelProperty(notes = "the image URL")

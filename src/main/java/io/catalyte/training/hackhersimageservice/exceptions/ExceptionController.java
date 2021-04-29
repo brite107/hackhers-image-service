@@ -83,21 +83,6 @@ public class ExceptionController {
   }
 
   /**
-   * Triggered when the BadDataResponse exception is thrown.
-   *
-   * @param exception - the BadDataResponse exception containing the custom message.
-   * @return - the ResponseEntity containing the custom exception and the status code 400
-   */
-  @ExceptionHandler(UniqueFieldViolation.class)
-  protected ResponseEntity<ExceptionResponse> uniqueFieldViolation(UniqueFieldViolation exception) {
-
-    ExceptionResponse response =
-        new ExceptionResponse(BAD_DATA, new Date(), exception.getMessage());
-
-    return new ResponseEntity<>(response, HttpStatus.CONFLICT);
-  }
-
-  /**
    * Triggered when the ServiceUnavailable exception is thrown.
    *
    * @param ex the ServiceUnavailable exception containing the custom message.
