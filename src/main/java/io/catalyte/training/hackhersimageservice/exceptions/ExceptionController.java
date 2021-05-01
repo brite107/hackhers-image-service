@@ -1,5 +1,14 @@
 package io.catalyte.training.hackhersimageservice.exceptions;
 
+import static io.catalyte.training.hackhersimageservice.constants.StringConstants.BAD_DATA;
+import static io.catalyte.training.hackhersimageservice.constants.StringConstants.NOT_FOUND;
+import static io.catalyte.training.hackhersimageservice.constants.StringConstants.SERVER_ERROR;
+import static io.catalyte.training.hackhersimageservice.constants.StringConstants.UNEXPECTED_ERROR;
+import static io.catalyte.training.hackhersimageservice.constants.StringConstants.VALIDATION_ERROR;
+
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
 import org.hibernate.JDBCException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -9,12 +18,6 @@ import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseStatus;
-
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
-
-import static io.catalyte.training.hackhersimageservice.constants.StringConstants.*;
 
 
 /**

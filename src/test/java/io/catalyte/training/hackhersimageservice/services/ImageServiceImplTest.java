@@ -1,8 +1,5 @@
 package io.catalyte.training.hackhersimageservice.services;
 
-import static org.junit.Assert.*;
-import static org.mockito.Mockito.when;
-
 import io.catalyte.training.hackhersimageservice.entities.Image;
 import io.catalyte.training.hackhersimageservice.repositories.ImageRepository;
 import java.util.ArrayList;
