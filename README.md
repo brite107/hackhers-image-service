@@ -20,6 +20,12 @@ This project provides a search service for images that match a given demographic
 
 - /images/{id}
 
+## Postman ##
+
+A postman collection demonstrates Get requests for demographic & category, demographic & type, and get by ID. The collection can be accessed by clicking this button:
+
+[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/14413928-1b39b282-8c03-435c-b77b-3739a03377c6?action=collection%2Ffork&collection-url=entityId%3D14413928-1b39b282-8c03-435c-b77b-3739a03377c6%26entityType%3Dcollection%26workspaceId%3Da40c480b-02a3-4641-8897-5ae90ec6f15b)
+
 ### Image Domain Object ###
 
 The Image object has the following properties:
@@ -35,17 +41,15 @@ The Image object has the following properties:
 
 ### Demographics
 
-- Women
-- Men
-- Kids
+- "Kids", "Men", "Women"
 
 ### Categories
 
--
+- "Baseball", "Basketball", "Boxing", "Football", "Golf", "Hockey", "Running", "Skateboarding", "Soccer", "Weightlifting"
 
 ### Types
 
--
+- "Belt", "Elbow Pad", "Flip Flop", "Glove", "Hat", "Headband", "Helmet", "Hoodie", "Jacket", "Pant", "Pool Noodle", "Shin Guard", "Shoe", "Short", "Sock", "Sunglasses", "Tank Top", "Visor", "Wristband"
 
 ### Examples
 
@@ -55,11 +59,11 @@ http://localhost:8081/images/1
 To get all images with the Women's demographic:
 http://localhost:8081/images?demographic=Women
 
-To get all images matching demographic Women and type Shoe:
-http://localhost:8081/images?demographic=Women&type=Shoe
+To get all images matching demographic 'Women' and type 'Shin Guard':
+http://localhost:8081/images?demographic=Women&type=Shin+Guard
 
-To get all images matching demographic Women, type Shoe, and category Basketball:
-http://localhost:8081/images?demographic=Women&type=Shoe&category=Basketball
+To get all images matching demographic Women and category Basketball:
+http://localhost:8081/images?demographic=Women&category=Basketball
 
 ---
 
