@@ -126,6 +126,45 @@ public class DataLoader implements CommandLineRunner {
           "https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/d4617051-bf5e-4374-8d9f-cab836a9d894/aerobill-womens-golf-visor-nh3JSN.png",
           "https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/l3aiqkt27yejk8m56mvv/jordan-jumpman-wristband-V9GPOe.png");
 
+  public static final List<String> MENS_CATEGORIES = Arrays
+      .asList(
+          "https://static.nike.com/a/images/q_auto:eco/t_product_v1/f_auto/dpr_1.0/w_586,c_limit/93b8a312-769f-488a-a267-dfe1a13ade85/force-zoom-trout-7-mens-baseball-cleat-PJD04W.png",
+          "https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/1d6bbd25-b2c8-4a3d-b7c0-7db118b77f82/elite-championship-indoor-basketball-TxPnb5.png",
+          "https://www.roninwear.com/images/everlast-powerlock-pro-hook--loop-training-gloves-red-grey-1.jpg",
+          "https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/bdschtiumr4ojfxqazjv/seattle-seahawks-dk-metcalf-mens-game-football-jersey-wz0KCt.png",
+          "https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/cd25b83e-81e6-49fa-a337-2645271ccfef/air-sport-golf-bag-SHdW9f.png",
+          "https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/swf5in2u7bwfmoyf1dbb/team-usa-replica-mens-hockey-jersey-8rd2bG.png",
+          "https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/60740f48-a3d7-441d-887f-fdb85b2493a6/zoomx-invincible-run-flyknit-mens-running-shoe-NgvDVX.png",
+          "https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/dlgldxulxcgsz5v6du9z/sb-zoom-stefan-janoski-rm-skate-shoe-fCvbQF.png",
+          "https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/588d6f88-4860-4161-beef-f15203b9ff81/tiempo-legend-8-pro-fg-firm-ground-soccer-cleat-xn2l5X.png",
+          "https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/3d15f7d7-461f-4eff-85bd-0a100c234e2d/free-metcon-3-mens-training-shoe-HT6hdN.png");
+
+  public static final List<String> WOMENS_CATEGORIES = Arrays
+      .asList(
+          "https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/tr3eca2hhqyy8jgly7xz/hyperdiamond-softball-fielding-glove-kbGtFp.png",
+          "https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/580ed8b2-bc96-4b1c-8ad9-ee6ae3b7e898/giannis-skills-basketball-C4wFXn.png",
+          "https://target.scene7.com/is/image/Target/GUEST_e905fa98-5bfb-41ae-a9a2-4f69df87989c?wid=488&hei=488&fmt=pjpeg",
+          "https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/s8ycovofayvkungjntju/tennessee-titans-marcus-mariota-womens-football-home-fsLmVB.png",
+          "https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/86c7c78c-a9b6-499b-928e-a19387e98bef/air-max-270-g-golf-shoe-xvxwdZ.png",
+          "https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/cjhyj6uq38ekbbdkca9p/team-canada-replica-mens-hockey-jersey-TtFSwJ.png",
+          "https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/b1a33345-c7d9-4e62-a837-4efa452e5fb7/zoomx-invincible-run-flyknit-womens-running-shoe-8v734r.png",
+          "https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/eb7db080-dc1e-44cd-bd5d-28619ab11ba7/sb-zoom-blazer-mid-premium-skate-shoe-bcP1Nd.png",
+          "https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/4ae7be1f-b147-4287-99ec-b7a31181337e/mercurial-fade-soccer-ball-FhjC3K.png",
+          "https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/e2f3c846-8b83-4d50-bfa0-f96dd2b0f87f/resistance-band-light-w3XsX9.png");
+
+  public static final List<String> KIDS_CATEGORIES = Arrays
+      .asList(
+          "https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/8aa4a941-09b0-4968-b54d-783a4ae1fa67/alpha-edge-kids-baseball-fielding-glove-R5gGc1.png",
+          "https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/189ea755-6b84-42e3-bafd-5df39b433c9f/lebron-skills-basketball-size-3-8VBknx.png",
+          "https://m.media-amazon.com/images/I/41yZn8S512L._SL500_.jpg",
+          "https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/f2hluw0kzewljlkh6y1e/mini-spin-football-g0JJVv.png",
+          "https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/i1-df0572fd-86f8-4fd1-9fb6-7b9ecf9127d4/sport-lite-golf-bag-1Ch6SL.png",
+          "https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/cjhyj6uq38ekbbdkca9p/team-canada-replica-mens-hockey-jersey-TtFSwJ.png",
+          "https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/d9a9654a-a182-4651-9376-15af0fa01d79/air-zoom-pegasus-38-little-big-kids-running-shoe-kGSw18.png",
+          "https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/f7fa32f5-ad8b-4d76-ab43-013bd47f8964/sb-zoom-stefan-janoski-canvas-35y-7y-big-kids-skateboarding-shoe-r838o7.png",
+          "https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/943d4cfd-ed62-473a-94e1-f3a3d08fbf23/flight-soccer-ball-rPkJLP.png",
+          "https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/3a86b154-9f38-422f-9bd6-1e2de2fc88e4/push-up-grip-3-QP8T0m.png");
+
   /**
    * method which loads the images
    *
@@ -163,6 +202,30 @@ public class DataLoader implements CommandLineRunner {
       image.setType(TYPES.get(i));
       image.setDemographic(DEMOGRAPHIC_WOMEN);
       image.setImageUrl(WOMENS_TYPES.get(i));
+      imageRepository.save(image);
+    }
+
+    for (int i = 0; i < MENS_CATEGORIES.size(); i++) {
+      Image image = new Image();
+      image.setCategory(CATEGORIES.get(i));
+      image.setDemographic(DEMOGRAPHIC_MEN);
+      image.setImageUrl(MENS_CATEGORIES.get(i));
+      imageRepository.save(image);
+    }
+
+    for (int i = 0; i < KIDS_CATEGORIES.size(); i++) {
+      Image image = new Image();
+      image.setCategory(CATEGORIES.get(i));
+      image.setDemographic(DEMOGRAPHIC_KIDS);
+      image.setImageUrl(KIDS_CATEGORIES.get(i));
+      imageRepository.save(image);
+    }
+
+    for (int i = 0; i < WOMENS_CATEGORIES.size(); i++) {
+      Image image = new Image();
+      image.setCategory(CATEGORIES.get(i));
+      image.setDemographic(DEMOGRAPHIC_WOMEN);
+      image.setImageUrl(WOMENS_CATEGORIES.get(i));
       imageRepository.save(image);
     }
 
